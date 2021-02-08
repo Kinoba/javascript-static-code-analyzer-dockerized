@@ -16,7 +16,19 @@ ARG stylelint_config_standard_version=^20.0.0
 ARG stylelint_scss_version=^3.17.1
 
 RUN useradd -ms /bin/bash jsman \
-  && yarn add global \
+    && mkdir /node_modules \
+    && touch /yarn.lock \
+             /yarn-error.log \
+    && echo {} > /package.json \
+    && chown jsman:jsman \
+         /node_modules \
+         /yarn.lock \
+         /yarn-error.log \
+         /package.json
+
+USER jsman
+
+RUN yarn add global \
     eslint@${eslint_version} \
     typescript@${typescript_version} \
     @typescript-eslint/eslint-plugin@${typescript_eslint_plugin_version} \
@@ -26,7 +38,5 @@ RUN useradd -ms /bin/bash jsman \
     stylelint-config-sass-guidelines@${stylelint_config_sass_guidelines_version} \
     stylelint-config-standard@${stylelint_config_standard_version} \
     stylelint-scss@${stylelint_scss_version}
-
-USER jsman
 
 WORKDIR /app
