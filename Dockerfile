@@ -11,6 +11,7 @@ ARG typescript_version=3.5.3
 ARG typescript_eslint_plugin_version=2.10.0
 ARG typescript_eslint_parser_version=2.10.0
 ARG babel_eslint_version=10.1.0
+ARG babel_eslint_parser_version=7.16.0
 ARG stylelint_version=^13.3.2
 ARG stylelint_checkstyle_formatter_version=^0.1.2
 ARG stylelint_config_sass_guidelines_version=^7.0.0
@@ -37,6 +38,7 @@ RUN yarn add global \
     @typescript-eslint/eslint-plugin@${typescript_eslint_plugin_version} \
     @typescript-eslint/parser@${typescript_eslint_parser_version} \
     babel-eslint@${babel_eslint_version} \
+    @babel/eslint-parser@${babel_eslint_parser_version} \
     stylelint@${stylelint_version} \
     stylelint-checkstyle-formatter@${stylelint_checkstyle_formatter_version} \
     stylelint-config-sass-guidelines@${stylelint_config_sass_guidelines_version} \

@@ -21,3 +21,4 @@ docker build . -t kinoba/javascript-static-code-analyzer
 
 ## TODO
 
+- Remove deprecated `babel-eslint` package
