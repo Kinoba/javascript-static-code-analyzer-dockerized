@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14.18.0
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=en_US.UTF-8
@@ -6,6 +6,7 @@ ENV LANGUAGE=en_US.UTF-8
 ENV PATH="$PATH:/node_modules/.bin"
 
 ARG eslint_version=5.16.0
+ARG eslint_plugin_node_version=11.1.0
 ARG eslint_plugin_vue_version=6.2.2
 ARG typescript_version=3.5.3
 ARG typescript_eslint_plugin_version=2.10.0
@@ -33,6 +34,7 @@ USER jsman
 
 RUN yarn add global \
     eslint@${eslint_version} \
+    eslint-plugin-node@${eslint_plugin_node_version} \
     eslint-plugin-vue@${eslint_plugin_vue_version} \
     typescript@${typescript_version} \
     @typescript-eslint/eslint-plugin@${typescript_eslint_plugin_version} \
