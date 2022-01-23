@@ -5,8 +5,13 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PATH="$PATH:/node_modules/.bin"
 
-ARG eslint_version=5.16.0
+ARG eslint_version=^7.17.0
+ARG eslint_config_airbnb_base_version=^14.2.1
+ARG eslint_config_prettier_version=^8.3.0
 ARG eslint_plugin_node_version=11.1.0
+ARG eslint_plugin_prettier_version=^3.4.0
+ARG eslint_plugin_react_version=^7.21.3
+ARG eslint_plugin_react_hooks_version=^4.0.8
 ARG eslint_plugin_vue_version=6.2.2
 ARG typescript_version=3.5.3
 ARG typescript_eslint_plugin_version=2.10.0
@@ -18,12 +23,13 @@ ARG stylelint_checkstyle_formatter_version=^0.1.2
 ARG stylelint_config_sass_guidelines_version=^7.0.0
 ARG stylelint_config_standard_version=^20.0.0
 ARG stylelint_scss_version=^3.17.1
+ARG vue_cli_plugin_eslint_version=^4.5.15
 
 RUN useradd -ms /bin/bash jsman \
     && mkdir /node_modules \
     && touch /yarn.lock \
              /yarn-error.log \
-    && echo {} > /package.json \
+    && echo "{ \"license\": \"UNLICENSED\" }" > /package.json \
     && chown jsman:jsman \
          /node_modules \
          /yarn.lock \
@@ -34,7 +40,12 @@ USER jsman
 
 RUN yarn add global \
     eslint@${eslint_version} \
+    eslint-config-airbnb-base@${eslint_config_airbnb_base_version} \
+    eslint-config-prettier@${eslint_config_prettier_version} \
     eslint-plugin-node@${eslint_plugin_node_version} \
+    eslint-plugin-prettier@${eslint_plugin_prettier_version} \
+    eslint-plugin-react@${eslint_plugin_react_version} \
+    eslint-plugin-react-hooks@${eslint_plugin_react_hooks_version} \
     eslint-plugin-vue@${eslint_plugin_vue_version} \
     typescript@${typescript_version} \
     @typescript-eslint/eslint-plugin@${typescript_eslint_plugin_version} \
@@ -45,6 +56,7 @@ RUN yarn add global \
     stylelint-checkstyle-formatter@${stylelint_checkstyle_formatter_version} \
     stylelint-config-sass-guidelines@${stylelint_config_sass_guidelines_version} \
     stylelint-config-standard@${stylelint_config_standard_version} \
-    stylelint-scss@${stylelint_scss_version}
+    stylelint-scss@${stylelint_scss_version} \
+    @vue/cli-plugin-eslint@${vue_cli_plugin_eslint_version}
 
 WORKDIR /app
