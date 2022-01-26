@@ -18,11 +18,11 @@ ARG typescript_eslint_plugin_version=2.10.0
 ARG typescript_eslint_parser_version=2.10.0
 ARG babel_eslint_version=10.1.0
 ARG babel_eslint_parser_version=7.16.0
-ARG stylelint_version=^13.3.2
+ARG stylelint_version=^14.3.0
 ARG stylelint_checkstyle_formatter_version=^0.1.2
-ARG stylelint_config_sass_guidelines_version=^7.0.0
-ARG stylelint_config_standard_version=^20.0.0
-ARG stylelint_scss_version=^3.17.1
+ARG stylelint_config_sass_guidelines_version=^9.0.0
+ARG stylelint_config_standard_version=^24.0.0
+ARG stylelint_scss_version=^4.1.0
 ARG vue_cli_plugin_eslint_version=^4.5.15
 
 RUN useradd -ms /bin/bash jsman \
