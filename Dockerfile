@@ -5,6 +5,7 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PATH="$PATH:/node_modules/.bin"
 
+ARG babel_eslint_parser_version=^7.16.0
 ARG eslint_version=7.28.0
 ARG eslint_config_airbnb_base_version=^14.2.1
 ARG eslint_plugin_node_version=11.1.0
@@ -44,6 +45,7 @@ RUN useradd -ms /bin/bash jsman \
 USER jsman
 
 RUN yarn add global \
+    @babel/eslint-parser@${babel_eslint_parser_version} \
     eslint@${eslint_version} \
     eslint-config-airbnb-base@${eslint_config_airbnb_base_version} \
     eslint-config-prettier@${eslint_config_prettier_version} \
