@@ -5,8 +5,8 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PATH="$PATH:/node_modules/.bin"
 
-ARG babel_core_version=^7.16.0
-ARG babel_eslint_parser_version=^7.16.0
+ARG babel_core_version=^7.17.0
+ARG babel_eslint_parser_version=^7.17.0
 ARG eslint_version=7.28.0
 ARG eslint_config_airbnb_base_version=^14.2.1
 ARG eslint_plugin_node_version=11.1.0
@@ -22,8 +22,6 @@ ARG prettier_version=2.3.0
 ARG typescript_version=3.5.3
 ARG typescript_eslint_plugin_version=2.10.0
 ARG typescript_eslint_parser_version=2.10.0
-ARG babel_eslint_version=10.1.0
-ARG babel_eslint_parser_version=7.16.0
 ARG stylelint_version=^14.3.0
 ARG stylelint_checkstyle_formatter_version=^0.1.2
 ARG stylelint_config_sass_guidelines_version=^9.0.0
@@ -66,8 +64,6 @@ RUN yarn add global \
     typescript@${typescript_version} \
     @typescript-eslint/eslint-plugin@${typescript_eslint_plugin_version} \
     @typescript-eslint/parser@${typescript_eslint_parser_version} \
-    babel-eslint@${babel_eslint_version} \
-    @babel/eslint-parser@${babel_eslint_parser_version} \
     stylelint@${stylelint_version} \
     stylelint-checkstyle-formatter@${stylelint_checkstyle_formatter_version} \
     stylelint-config-sass-guidelines@${stylelint_config_sass_guidelines_version} \
