@@ -7,11 +7,11 @@ ENV PATH="$PATH:/node_modules/.bin"
 
 ARG babel_core_version=^7.17.0
 ARG babel_eslint_parser_version=^7.17.0
-ARG eslint_version=7.28.0
+ARG eslint_version=^8.10.0
 ARG eslint_config_airbnb_base_version=^14.2.1
 ARG eslint_plugin_node_version=11.1.0
 ARG eslint_plugin_react_hooks_version=^4.0.8
-ARG eslint_plugin_vue_version=6.2.2
+ARG eslint_plugin_vue_version=^8.4.1
 ARG eslint_plugin_prettier_version=3.4.0
 ARG eslint_config_prettier_version=8.3.0
 ARG eslint_plugin_jsx_a11y_version=6.4.1
@@ -20,14 +20,15 @@ ARG postcss_version=^8
 ARG postcss_html_version=^1.3.0
 ARG prettier_version=2.3.0
 ARG typescript_version=3.5.3
-ARG typescript_eslint_plugin_version=2.10.0
-ARG typescript_eslint_parser_version=2.10.0
+ARG typescript_eslint_plugin_version=^5.10.0
+ARG typescript_eslint_parser_version=5.0.0
 ARG stylelint_version=^14.3.0
 ARG stylelint_checkstyle_formatter_version=^0.1.2
 ARG stylelint_config_sass_guidelines_version=^9.0.0
 ARG stylelint_config_standard_version=^24.0.0
 ARG stylelint_config_recommended_vue_version=^1.1.0
 ARG stylelint_scss_version=^4.1.0
+ARG vue_version=^3.2.31
 ARG vue_cli_plugin_eslint_version=^4.5.15
 
 RUN useradd -ms /bin/bash jsman \
@@ -70,6 +71,7 @@ RUN yarn add global \
     stylelint-config-standard@${stylelint_config_standard_version} \
     stylelint-config-recommended-vue@${stylelint_config_recommended_vue_version} \
     stylelint-scss@${stylelint_scss_version} \
+    vue@${vue_version} \
     @vue/cli-plugin-eslint@${vue_cli_plugin_eslint_version}
 
 WORKDIR /app
