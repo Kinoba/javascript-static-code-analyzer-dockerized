@@ -12,7 +12,6 @@ ARG babel_eslint_parser_version=^7.17.0
 ARG eslint_version=^8.10.0
 ARG eslint_config_airbnb_base_version=^14.2.1
 ARG eslint_config_prettier_version=8.3.0
-ARG eslint_config_typescript_version=^6.0.1
 ARG eslint_plugin_import_version=^2.25.4
 ARG eslint_plugin_jest_version=^26.1.1
 ARG eslint_plugin_jsdoc_version=^37.9.6
@@ -23,6 +22,8 @@ ARG eslint_plugin_prettier_version=3.4.0
 ARG eslint_plugin_react_hooks_version=^4.0.8
 ARG eslint_plugin_react_version=7.24.0
 ARG eslint_plugin_vue_version=^8.4.1
+ARG jest_version=^26.6.3
+ARG nuxtjs_eslint_config_typescript_version=^9.0.0
 ARG postcss_version=^8
 ARG postcss_html_version=^1.3.0
 ARG prettier_version=2.3.0
@@ -72,7 +73,8 @@ RUN yarn add global \
     eslint-config-prettier@${eslint_config_prettier_version} \
     eslint-plugin-jsx-a11y@${eslint_plugin_jsx_a11y_version} \
     eslint-plugin-react@${eslint_plugin_react_version} \
-    @nuxtjs/eslint-config-typescript@${eslint_config_typescript_version} \
+    jest@${jest_version} \
+    @nuxtjs/eslint-config-typescript@${nuxtjs_eslint_config_typescript_version} \
     postcss@${postcss_version} \ 
     postcss-html@${postcss_html_version} \
     prettier@${prettier_version} \
