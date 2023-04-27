@@ -2,7 +2,7 @@
 
 ## Usage
 
-```
+```bash
 docker run --rm -v $(pwd):/app kinoba/javascript-static-code-analyzer [static tool]
 ```
 
@@ -15,8 +15,9 @@ For now this image is able to run:
 
 ## Contribute
 
-```
-docker build . -t kinoba/javascript-static-code-analyzer
+```bash
+DOCKER_DEFAULT_PLATFORM=linux/amd64 docker build . -t kinoba/javascript-static-code-analyzer
+docker push kinoba/javascript-static-code-analyzer
 ```
 
 ## TODO
