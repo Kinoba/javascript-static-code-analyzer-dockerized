@@ -1,12 +1,14 @@
 name: deploy
 
 on:
-  pull_request_target:
-    types:
-      - opened
   push:
     branches:
+      - '**' # matches every branch
+      - '!main'
+  pull_request:
+    branches:
       - 'main'
+    types: [opened]
 
 jobs:
   docker:
