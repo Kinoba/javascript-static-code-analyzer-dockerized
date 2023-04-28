@@ -19,20 +19,8 @@ jobs:
     outputs:
       is_main_branch: ${{ env.IS_MAIN_BRANCH }}
 
-  login:
-    needs: contextualize
-    runs-on: ubuntu-latest
-    if: needs.contextualize.outputs.is_main_branch
-    steps:
-      - 
-        name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  push:
-    needs: [contextualize, login]
+  docker:
+    needs: [contextualize]
     runs-on: ubuntu-latest
     steps:
       - 
@@ -44,6 +32,13 @@ jobs:
       - 
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+      - 
+        name: Login to Docker Hub
+        if: {% raw %}${{ needs.contextualize.outputs.is_main_branch }}{% endraw %}
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - 
         name: Build (and deploy if on main) Docker image
         uses: docker/build-push-action@v4
