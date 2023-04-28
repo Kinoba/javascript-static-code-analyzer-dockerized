@@ -19,19 +19,6 @@ jobs:
     outputs:
       is_main_branch: ${{ env.IS_MAIN_BRANCH }}
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - 
-        name: Checkout
-        uses: actions/checkout@v3
-      - 
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-      - 
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
   login:
     needs: contextualize
     runs-on: ubuntu-latest
@@ -45,9 +32,18 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   push:
-    needs: [contextualize, login, build]
+    needs: [contextualize, login]
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v3
+      - 
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - 
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - 
         name: Build (and deploy if on main) Docker image
         uses: docker/build-push-action@v4
