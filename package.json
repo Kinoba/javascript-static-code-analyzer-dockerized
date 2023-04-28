@@ -7,7 +7,7 @@
     "@angular-eslint/eslint-plugin-template": "^13.1.0",
     "@babel/core": "^7.17.0",
     "@babel/eslint-parser": "^7.17.0",
-    "@nuxtjs/eslint-config-typescript": "^9.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.0.0",
     "@vue/cli-plugin-eslint": "^5.0.0",
