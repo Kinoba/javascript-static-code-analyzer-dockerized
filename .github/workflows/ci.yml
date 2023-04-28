@@ -27,6 +27,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set env.BRANCH
+        run: echo "IS_MAIN_BRANCH=${{ (github.ref_name == 'main') }}" >> $GITHUB_ENV
       -
         name: Build image
         uses: docker/build-push-action@v4
@@ -34,5 +36,5 @@ jobs:
           context: .
           # platforms: linux/amd64,linux/arm64
           platforms: linux/amd64
-          push: ${{ github.ref == 'refs/heads/main' && true || false }}
+          push: env.IS_MAIN_BRANCH
           tags: kinoba/javascript-static-code-analyzer:latest
