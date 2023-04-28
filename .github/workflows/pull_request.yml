@@ -1,0 +1,15 @@
+name: build
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+jobs:
+  build:
+    uses: Kinoba/javascript-static-code-analyzer-dockerized/.github/workflows/build.yml@main

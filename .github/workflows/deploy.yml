@@ -6,12 +6,10 @@ on:
       - 'main'
 
 jobs:
-  tests:
-    
-
-jobs:
-  docker:
-    uses: ./.github/workflows/build.yml
+  build:
+    uses: Kinoba/javascript-static-code-analyzer-dockerized/.github/workflows/build.yml@main
+  
+  push:
     runs-on: ubuntu-latest
     steps:
       -
