@@ -36,5 +36,5 @@ jobs:
           context: .
           # platforms: linux/amd64,linux/arm64
           platforms: linux/amd64
-          push: env.IS_MAIN_BRANCH
+          push: ${{ env.IS_MAIN_BRANCH }}
           tags: kinoba/javascript-static-code-analyzer:latest
