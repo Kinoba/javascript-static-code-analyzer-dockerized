@@ -16,6 +16,8 @@ jobs:
       - 
         name: Set env.BRANCH
         run: echo "IS_MAIN_BRANCH=${{ (github.ref_name == 'main') }}" >> $GITHUB_ENV
+    outputs:
+      is_main_branch: ${{ env.IS_MAIN_BRANCH }}
 
   build:
     runs-on: ubuntu-latest
@@ -33,7 +35,7 @@ jobs:
   login:
     needs: contextualize
     runs-on: ubuntu-latest
-    if: ${{ env.IS_MAIN_BRANCH }}
+    if: needs.contextualize.outputs.is_main_branch
     steps:
       - 
         name: Login to Docker Hub
