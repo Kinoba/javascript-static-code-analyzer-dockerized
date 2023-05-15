@@ -36,6 +36,6 @@
     "stylelint-config-standard": "^29.0.0",
     "stylelint-scss": "^5.0.0",
     "typescript": "^5.0.4",
-    "vue": "^3.2.31"
+    "vue": "^3.3.2"
   }
 }
