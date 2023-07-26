@@ -8,15 +8,13 @@ ENV PATH="$PATH:/app/node_modules/.bin"
 WORKDIR /app
 
 RUN useradd -ms /bin/bash jsman \
-    && mkdir -p /app/node_modules \
-    && touch /app/yarn-error.log \
-    && chown jsman:jsman \
-         /app/node_modules \
-         /app/yarn-error.log \
-    && ln -s /app/node_modules /
+  && mkdir -p /app/node_modules \
+  && touch /app/yarn-error.log \
+  && chown -R jsman:jsman /app/ \
+  && ln -s /app/node_modules /
 
 USER jsman
 
-COPY package.json yarn.lock /app/
+COPY --chown=jsman:jsman package.json yarn.lock /app/
 
 RUN yarn install
