@@ -8,7 +8,7 @@
   "dependencies": {
     "@angular-eslint/eslint-plugin": "^16.1.2",
     "@angular-eslint/eslint-plugin-template": "^16.1.2",
-    "@babel/core": "^7.22.17",
+    "@babel/core": "^7.22.20",
     "@babel/eslint-parser": "^7.22.15",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
