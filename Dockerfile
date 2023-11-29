@@ -7,7 +7,8 @@ ENV PATH="$PATH:/app/node_modules/.bin"
 
 WORKDIR /app
 
-RUN useradd -ms /bin/bash jsman \
+RUN groupadd -g 7777 jsman \
+  && useradd -m -s /bin/bash -u 7777 -g 7777 jsman \
   && mkdir -p /app/node_modules \
   && touch /app/yarn-error.log \
   && chown -R jsman:jsman /app/ \
