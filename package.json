@@ -6,7 +6,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@angular-eslint/eslint-plugin": "^16.2.0",
+    "@angular-eslint/eslint-plugin": "^17.2.1",
     "@angular-eslint/eslint-plugin-template": "^17.1.0",
     "@babel/core": "^7.23.3",
     "@babel/eslint-parser": "^7.23.3",
