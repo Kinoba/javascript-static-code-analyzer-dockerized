@@ -4,11 +4,42 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "sunday"
+      time: "10:00"
+      timezone: "Europe/Paris"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "sunday"
+      time: "10:00"
+      timezone: "Europe/Paris"
+    groups:
+      eslint:
+        patterns:
+          - "@angular-eslint/*"
+          - "@babel/eslint-parser"
+          - "@nuxtjs/eslint-config-typescript"
+          - "@typescript-eslint/*"
+          - "@vue/cli-plugin-eslint"
+          - "eslint*"
+      postcss:
+        patterns:
+          - "postcss*"
+      prettier:
+        patterns:
+          - "@trivago/prettier-plugin-sort-imports"
+          - "prettier*"
+      stylelint:
+        patterns:
+          - "stylelint*"
+      vue_cli:
+        patterns:
+          - "@vue/cli-*"
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
       interval: "weekly"
+      day: "sunday"
+      time: "10:00"
+      timezone: "Europe/Paris"
