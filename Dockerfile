@@ -1,9 +1,10 @@
-FROM node:21
+FROM node:23.4.0
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PATH="$PATH:/app/node_modules/.bin"
+ENV NODE_OPTIONS=--max_old_space_size=12288
 
 WORKDIR /app
 
@@ -18,4 +19,4 @@ USER jsman
 
 COPY --chown=jsman:jsman package.json yarn.lock /app/
 
-RUN yarn install
+RUN yarn install --frozen-lockfile
