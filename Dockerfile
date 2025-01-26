@@ -1,4 +1,4 @@
-FROM node:23.4.0
+FROM node:23.6.1
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=en_US.UTF-8
