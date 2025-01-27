@@ -2,13 +2,16 @@ version: 2
 updates:
   - package-ecosystem: "docker"
     directory: "/"
+    open-pull-requests-limit: 3
     schedule:
       interval: "weekly"
       day: "sunday"
       time: "10:00"
       timezone: "Europe/Paris"
+
   - package-ecosystem: "npm"
     directory: "/"
+    open-pull-requests-limit: 3
     schedule:
       interval: "weekly"
       day: "sunday"
@@ -36,8 +39,10 @@ updates:
       vue_cli:
         patterns:
           - "@vue/cli-*"
+
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
+    open-pull-requests-limit: 3
     schedule:
       interval: "weekly"
       day: "sunday"
