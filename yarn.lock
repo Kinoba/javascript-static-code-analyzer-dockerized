@@ -5395,7 +5395,7 @@ stylelint-checkstyle-reporter@^1.0.0:
     get-stdin "9.0.0"
     xmlbuilder2 "3.1.1"
 
-stylelint-config-html@>=1.0.0:
+stylelint-config-html@>=1.0.0, stylelint-config-html@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-html/-/stylelint-config-html-1.1.0.tgz#999db19aea713b7ff6dde92ada76e4c1bd812b66"
   integrity sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==
